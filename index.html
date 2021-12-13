@@ -11,27 +11,29 @@
     <title>Hello, world!</title>
     <style>
         body{
-            background-color: rgb(236, 236, 236);
+            background-color: rgb(255, 255, 255);
         }
         .sidebar{
            position: fixed;
            top: 0px;
            z-index: 9999;
            min-width: 300px;
-           margin-left: -1000px;
+           margin-left: -600px;
            background-color: rgb(255, 255, 255);
            height: 100%;
            transition: all ease;
            overflow: hidden;
            padding: 0px;
+           padding: 15px;
+           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         }
 
-        .active{
+        .active-sidebar{
             margin-left: 0px;
-            transition: 0.4s all;
+            transition: 1s all;
             /* width: 300px; */
             /* min-width: 300px; */
-            padding: 15px;
+            
         }
 
         .none{
@@ -39,7 +41,7 @@
             min-width: 0px !important;
             padding: 0px !important;
             /* display: none !important; */
-            transition: 0.4s all;
+            transition: 2s all;
         }
 
         .relative{
@@ -52,6 +54,15 @@
             bottom: 0;
             width: 100% !important;
         }
+
+        $grid-breakpoints: (
+        xs: 0,
+        sm: 400px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px
+        );
 
         
         .sidebar .list{
@@ -93,7 +104,7 @@
     <div class="sidebar" id="sidebar">
         <div class="relative">
             <header class="d-flex justify-content-end mb-3">
-                <i onclick="sidebarClose()" class='bx bx-x'></i>
+                <i onclick="sidebarClose()" class='bx bx-x '></i>
             </header>
             <li class="nav-link list text-dark">New Product</li>
             <li class="nav-link list text-dark">New Product</li>
@@ -108,22 +119,222 @@
         </div>  
     </div>
     
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar p-3 navbar-light bg-transparat">
         <div class="container">
-          <a style="cursor: pointer;" onclick="sidebarOpen()" class="navbar-brand"><i class='bx bx-menu'></i></a>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+            <div class="navbar-brand">
+                <a style="cursor: pointer;" onclick="sidebarOpen()"><i class='bx bx-menu'></i></a>
+                <a>WiseDev | ariefafn</a> 
+            </div>
+            
+            <div class="">
+            <span class="px-2">Login</span>
+            <span class="px-2">Help</span>
+            <i class='bx bx-shopping-bag' ></i>
+            </div>
         </div>
     </nav>
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://source.unsplash.com/1200x600?shoes" class="d-block w-100 img-fluid" alt="..."  >
+          </div>
+          <div class="carousel-item">
+            <img src="https://source.unsplash.com/1200x600?shoes-adidas" class="d-block w-100 img-fluid" alt="..."  >
+          </div>
+          <div class="carousel-item">
+            <img src="https://source.unsplash.com/1200x600?shoes-nike" class="d-block w-100 img-fluid" alt="..."  >
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div class="container">
+          <div class="row py-5 justify-content-center">
+              <div class="col-sm-6 col-8 col-xs-8">
+                <div class="card p-3 border-0 shadow-sm" style="border-radius: 30px; position: relative;">
+                    <div class="sold m-2 card p-3 border-0 shadow-sm text-white" style="position: absolute; background-color: rgb(192, 1, 1); border-radius: 40px;">
+                        sold
+                    </div>
+                    <img src="https://source.unsplash.com/400x500?shoes" class="d-block w-100 img-fluid" style="border-radius: 30px;" alt="..."  >
+                    <div class="card-body">
+                        <h5 class="card-title">Nama Product</h5>
+                        <h6 class="card-subtitle mb-2 text-muted ">Harga</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p>S M L <b>XL</b> </p>
+                      </div>
+                </div>
+              </div>
+          </div>
+      </div>
+
+      
+    <div id="carouselExampleControls" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://source.unsplash.com/1200x600?shoes" class="d-block w-100 img-fluid" alt="..."  >
+          </div>
+          <div class="carousel-item">
+            <img src="https://source.unsplash.com/1200x600?shoes-adidas" class="d-block w-100 img-fluid" alt="..."  >
+          </div>
+          <div class="carousel-item">
+            <img src="https://source.unsplash.com/1200x600?shoes-nike" class="d-block w-100 img-fluid" alt="..."  >
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-6">
+              <div class="card mb-3 border-0 shadow-sm" style="border-radius: 30px; position: relative;">
+                  <div class="sold m-2 card p-3 border-0 shadow-sm text-white" style="position: absolute; background-color: rgb(192, 1, 1); border-radius: 40px;">
+                      sold
+                  </div>
+                  <img src="https://source.unsplash.com/400x500?shoes" class="d-block w-100 img-fluid" style="border-radius: 30px;" alt="..."  >
+                  <div class="card-body">
+                      <h5 class="card-title">Nama Product</h5>
+                      <h6 class="card-subtitle mb-2 text-muted ">Harga</h6>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <p>S M L <b>XL</b> </p>
+                    </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card mb-3 border-0 shadow-sm" style="border-radius: 30px; position: relative;">
+                    <div class="sold m-2 card p-3 border-0 shadow-sm text-white" style="position: absolute; background-color: rgb(192, 1, 1); border-radius: 40px;">
+                        sold
+                    </div>
+                    <img src="https://source.unsplash.com/400x500?shoes" class="d-block w-100 img-fluid" style="border-radius: 30px;" alt="..."  >
+                    <div class="card-body">
+                        <h5 class="card-title">Nama Product</h5>
+                        <h6 class="card-subtitle mb-2 text-muted ">Harga</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p>S M L <b>XL</b> </p>
+                      </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-6">
+                <div class="card mb-3 border-0 shadow-sm" style="border-radius: 30px; position: relative;">
+                    <div class="sold m-2 card p-3 border-0 shadow-sm text-white" style="position: absolute; background-color: rgb(192, 1, 1); border-radius: 40px;">
+                        sold
+                    </div>
+                    <img src="https://source.unsplash.com/400x500?shoes" class="d-block w-100 img-fluid" style="border-radius: 30px;" alt="..."  >
+                    <div class="card-body">
+                        <h5 class="card-title">Nama Product</h5>
+                        <h6 class="card-subtitle mb-2 text-muted ">Harga</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p>S M L <b>XL</b> </p>
+                      </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-6">
+                <div class="card mb-3 border-0 shadow-sm" style="border-radius: 30px; position: relative;">
+                    <div class="sold m-2 card p-3 border-0 shadow-sm text-white" style="position: absolute; background-color: rgb(192, 1, 1); border-radius: 40px;">
+                        sold
+                    </div>
+                    <img src="https://source.unsplash.com/400x500?shoes" class="d-block w-100 img-fluid" style="border-radius: 30px;" alt="..."  >
+                    <div class="card-body">
+                        <h5 class="card-title">Nama Product</h5>
+                        <h6 class="card-subtitle mb-2 text-muted ">Harga</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p>S M L <b>XL</b> </p>
+                      </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-6">
+                <div class="card mb-3 border-0 shadow-sm" style="border-radius: 30px; position: relative;">
+                    <div class="sold m-2 card p-3 border-0 shadow-sm text-white" style="position: absolute; background-color: rgb(192, 1, 1); border-radius: 40px;">
+                        sold
+                    </div>
+                    <img src="https://source.unsplash.com/400x500?shoes" class="d-block w-100 img-fluid" style="border-radius: 30px;" alt="..."  >
+                    <div class="card-body">
+                        <h5 class="card-title">Nama Product</h5>
+                        <h6 class="card-subtitle mb-2 text-muted ">Harga</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p>S M L <b>XL</b> </p>
+                      </div>
+                </div>
+              </div>
+
+             
+        </div>
+        <div class="text-center mb-3">
+            <div class="btn btn-outline-light text-dark shadow ">View all</div>
+        </div>
+        
+        <h4 class="text-center my-5">C A T E G O R I E S</h4>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4 col-6">
+                    <a href="#">
+                    <div class="card mb-4 border-0 p-0 text-white">
+                        <img src="https://source.unsplash.com/500x700?nike"  style="border-radius: 20px;" class="card-img" alt="nike">
+                        <div class="card-img-overlay d-flex align-items-center p-0">
+                          <h5 class="card-title text-center flex-fill p-4">Category</h5>
+                        </div>
+                      </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-6">
+                    <a href="#">
+                    <div class="card mb-4 border-0 p-0 text-white">
+                        <img src="https://source.unsplash.com/500x700?nike"  style="border-radius: 20px;" class="card-img" alt="nike">
+                        <div class="card-img-overlay d-flex align-items-center p-0">
+                          <h5 class="card-title text-center flex-fill p-4">Category</h5>
+                        </div>
+                      </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-6">
+                    <a href="#">
+                    <div class="card mb-4 border-0 p-0 text-white">
+                        <img src="https://source.unsplash.com/500x700?nike"  style="border-radius: 20px;" class="card-img" alt="nike">
+                        <div class="card-img-overlay d-flex align-items-center p-0">
+                          <h5 class="card-title text-center flex-fill p-4">Category</h5>
+                        </div>
+                      </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <footer>
+        <div class="row py-5 shadow mt-5 justify-content-center">
+            <div class="col-auto">
+                Created by ariefafn
+            </div>
+        </div>
+    </footer>
+
+
 
     <script>
        function sidebarOpen (){ 
             const sidebar = document.querySelector('.sidebar');
             sidebar.style.display = 'block';    
             sidebar.classList.remove("none");
-            sidebar.classList.add("active");
+            sidebar.classList.add("active-sidebar");
        }
        function sidebarClose (){ 
             const sidebar = document.querySelector('.sidebar');
