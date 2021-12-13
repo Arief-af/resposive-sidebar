@@ -17,7 +17,8 @@
            position: fixed;
            top: 0px;
            z-index: 9999;
-           width: 0px;
+           min-width: 300px;
+           margin-left: -1000px;
            background-color: rgb(255, 255, 255);
            height: 100%;
            transition: all ease;
@@ -26,14 +27,15 @@
         }
 
         .active{
+            margin-left: 0px;
             transition: 0.4s all;
-            width: 300px;
+            /* width: 300px; */
             /* min-width: 300px; */
             padding: 15px;
         }
 
         .none{
-            width: 0px !important;
+            margin-left: -1000px;
             min-width: 0px !important;
             padding: 0px !important;
             /* display: none !important; */
