@@ -48,7 +48,7 @@
         .relative{
             position: relative !important;
             height: 100%;
-            overflow: hidden;
+            /* overflow: hidden; */
         }
         .bottom{
             position: absolute;
@@ -97,6 +97,35 @@
             cursor: pointer !important;
         }
 
+        .btn{
+          position: relative !important;
+          overflow: hidden;
+        }
+
+        .btn::before{
+          content: '';
+          position: absolute;
+          top: var(--y);
+          left: var(--x);
+          width: 0px;
+          height: 0px;
+          background-color: rgba(255, 255, 255, 0.226);
+          border-radius: 50%;
+          transition: width 0.2s, height 0.2s;
+          overflow: hidden;
+          transform: translate(-50%,-50%);
+        }
+        .btn:focus::before,.btn:active::before{
+          overflow: hidden;
+          width: 500%;
+          height: 500%;
+        }
+
+        .btn-dark:focus,
+        .btn-dark:active{
+            box-shadow:none !important;
+            outline:0px !important;
+        }
 
     </style>
   </head>
@@ -105,7 +134,8 @@
     <div class="sidebar" id="sidebar">
         <div class="relative">
             <header class="d-flex justify-content-end mb-3">
-                <i onclick="sidebarClose()" class='bx bx-x '></i>
+               <button onclick="sidebarClose()" class="btn btn-dark"> <i  class='bx bx-x '></i></button>
+               
             </header>
             <li class="nav-link list text-dark">New Product</li>
             <li class="nav-link list text-dark">New Product</li>
@@ -124,10 +154,10 @@
         </div>  
     </div>
     
-    <nav class="navbar p-3 navbar-light bg-transparat">
+    <nav class="navbar navbar-light fixed-top bg-light">
         <div class="container">
             <div class="navbar-brand">
-                <a style="cursor: pointer;" onclick="sidebarOpen()"><i class='bx bx-menu'></i></a>
+                <button style="cursor: pointer;" class="btn btn-dark" onclick="sidebarOpen()"><i class='bx bx-menu'></i></button>
                 <a>WiseDev | ariefafn</a> 
             </div>
             
@@ -139,7 +169,7 @@
         </div>
     </nav>
 
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleControls" class="carousel slide mt-5" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="https://source.unsplash.com/1200x600?shoes" class="d-block w-100 img-fluid" alt="..."  >
@@ -345,6 +375,15 @@
             const sidebar = document.querySelector('.sidebar');
             // sidebar.style.display = 'none';
             sidebar.classList.toggle("none");
+       }
+
+       const btn = document.querySelector('.btn');
+       btn.onmousemove = function(e) {
+         const x = e.pageX - btn.offsetLeft;
+         const y = e.pageY - btn.offsetTop;
+
+         btn.style.setProperty('--x',x + 'px');
+         btn.style.setProperty('--x',y + 'px');
        }
        
     </script>
